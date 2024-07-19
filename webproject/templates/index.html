@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>영화 정보 입력</title>
+</head>
+<body>
+    <h1>영화 정보 입력</h1>
+    <form method="post">
+        <label for="movie_name">영화명:</label>
+        <input type="text" id="movie_name" name="movie_name"><br><br>
+
+        <label for="movie_name_eng">영화명(영문):</label>
+        <input type="text" id="movie_name_eng" name="movie_name_eng"><br><br>
+        
+        <label for="production_year">제작연도:</label>
+        <input type="text" id="production_year" name="production_year"><br><br>
+        
+        <label for="country_name">제작국가:</label>
+        <input type="text" id="country_name" name="country_name"><br><br>
+        
+        <label for="movie_type">유형:</label>
+        <input type="text" id="movie_type" name="movie_type"><br><br>
+        
+        <label for="genre">장르:</label>
+        <input type="text" id="genre" name="genre"><br><br>
+
+        <label for="production_status">제작상태:</label>
+        <input type="text" id="production_status" name="production_status"><br><br>
+
+        <label for="director_name">감독:</label>
+        <input type="text" id="director_name" name="director_name"><br><br>
+        
+        <label for="studio_name">제작사:</label>
+        <input type="text" id="studio_name" name="studio_name"><br><br>
+
+        <button type="submit">조회</button>
+        <button type="reset">초기화</button>
+
+    </form>
+    
+    {% if list %}
+        <h2>조회 결과</h2>
+        <table border="1">
+            <tr>
+                <th>영화명</th>
+                <th>영화명(영문)</th>
+                <th>제작연도</th>
+                <th>제작국가</th>
+                <th>유형</th>
+                <th>장르</th>
+                <th>제작상태</th>
+                <th>감독</th>
+                <th>제작사</th>
+            </tr>
+                {% for item in list %}
+            <tr>
+                    {% for i in item.values() %}
+                <td>
+                    <option>{{i}}</option>
+                </td>
+                    {% endfor %}
+            </tr>
+                {% endfor %}
+        </table>
+    {% endif %}
+    
+</body>
+</html>
+
