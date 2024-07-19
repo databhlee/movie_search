@@ -1,6 +1,4 @@
 import pymysql
-
-
 from pymysql.constants.CLIENT import MULTI_STATEMENTS
 
 def open_db(dbname='university'):
